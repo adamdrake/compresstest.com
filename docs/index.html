@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <meta name="description" content="Preview the size of your compressed files with gzip, bzip, deflate.">
+
+    <title>Compress Test</title>
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- project-specific javascript   -->
+    <script type="text/javascript" src="send.js"></script>
+
+    <!-- Google Fonts stack -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,500">
+
+    <!-- project CSS -->
+    <link rel="stylesheet" href="style.css">
+
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111619346-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-111619346-1');
+	</script>
+
+
+</head>
+
+<body>
+
+    <section class="header">
+            <h1>Compress Test</h1>
+            <h2>Preview gzip, bzip, and deflate compressed sizes</h2>
+            <h3>We predict the future... not really. Close, though.</h3>
+    </section>
+
+    <section class="intro" id="top">
+        <div class="wrapper">
+
+
+            <div class="row">
+                <div class="input-container">
+
+                    <div class="text-field">
+                        <h2>Enter some text...</h2>
+                        <p>3 MB limit, or about 500,000 words.</p>
+                    </div>
+
+                    <form id="textForm">
+                        <p class="control">
+                            <textarea rows="9" cols="50" maxlength="3000000" name="textEntry" id="textEntry" placeholder="Your next novel, perhaps?"></textarea>
+                        </p>
+                        <div class="control">
+                            <button type="submit" value="submit" id="submitText">
+                                <span id="submitTextButton">Test it!</span>
+                            </button>
+                            <p class="alertText">
+                                <span id="alertText"></span>
+                            </p>
+                        </div>
+                    </form>
+
+                </div>
+
+                <div class="input-container">
+
+                    <div class="upload-field">
+                        <h2>...or upload a file.</h2>
+
+                    </div>
+
+                    <form id="fileForm">
+                        <input type="file" name="fileUpload" value="fileUpload" id="fileUpload">
+                        <p>3 MB maximum.</p>
+                        <div class="control">
+                            <button type="submit" value="submit" id="submitFile">
+                                <span id="submitFileButton">Test it!</span>
+                            </button>
+                            <p class="alertFile">
+                                <span id="alertFile"></span>
+                            </p>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="results">
+        <div class="results-wrapper">
+
+            <div class="card">
+                <div class="graph">
+
+                    <div class="line">
+                        <div class="bar" id="is-original">
+                            <span class="size-value" id="sizeOriginal"></span>
+                        </div>
+
+                        <div class="type-label">
+                            original size
+                        </div>
+                    </div>
+
+
+                    <div class="line">
+                        <div class="bar" id="is-gzip">
+                            <span class="size-value" id="gzip"></span>
+                        </div>
+
+                        <div class="type-label">
+                            gzip
+                            <p>
+                                <span id="gzip-percent" class="percent">...</span>of original size</p>
+                        </div>
+                    </div>
+
+
+                    <div class="line">
+                        <div class="bar" id="is-bzip">
+                            <span class="size-value" id="bzip"></span>
+                        </div>
+
+                        <div class="type-label">
+                            bzip
+                            <p>
+                                <span id="bzip-percent" class="percent">...</span>of original size</p>
+                        </div>
+                    </div>
+
+
+                    <div class="line">
+                        <div class="bar" id="is-deflate">
+                            <span class="size-value" id="deflate"></span>
+                        </div>
+
+                        <div class="type-label">
+                            deflate
+                            <p>
+                                <span id="deflate-percent" class="percent">...</span>of original size</p>
+                        </div>
+                    </div>
+
+                </div>
+                <!--End graph-->
+
+
+            </div>
+        </div>
+
+        <div class="reset">
+            Check another file &nbsp;
+            <a href="/">
+                <img src="static/restart.png" id="reset">
+            </a>
+        </div>
+
+
+    </section>
+
+</body>
